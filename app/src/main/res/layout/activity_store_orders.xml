@@ -6,4 +6,63 @@
     android:layout_height="match_parent"
     tools:context=".StoreOrdersActivity">
 
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Store Orders:"
+        tools:layout_editor_absoluteX="170dp"
+        tools:layout_editor_absoluteY="36dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Number"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="74dp"
+        tools:ignore="MissingConstraints" />
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="234dp"
+        android:layout_height="30dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="74dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Total (includes tax) $:"
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="143dp"
+        tools:ignore="MissingConstraints" />
+
+    <ListView
+        android:layout_width="362dp"
+        android:layout_height="387dp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="172dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel Order"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="574dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Export Store Orders"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="179dp"
+        tools:layout_editor_absoluteY="574dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

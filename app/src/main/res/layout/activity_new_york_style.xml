@@ -4,6 +4,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewYorkStyleActivity">
+    tools:context=".ChicagoStyleActivity">
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="39dp"
+        android:layout_height="36dp"
+        android:text="<"
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="415dp"
+        tools:ignore="MissingConstraints" />
+
+    <ListView
+        android:layout_width="170dp"
+        android:layout_height="415dp"
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="258dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New York Style"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="34dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="80dp"
+        android:layout_height="33dp"
+        android:text="Select Pizza Flavor:"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="77dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Size:"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="131dp" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="146dp"
+        android:layout_height="31dp"
+        tools:layout_editor_absoluteX="92dp"
+        tools:layout_editor_absoluteY="79dp"
+        tools:ignore="MissingConstraints" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="148dp"
+        android:layout_height="32dp"
+        tools:layout_editor_absoluteX="92dp"
+        tools:layout_editor_absoluteY="131dp"
+        tools:ignore="MissingConstraints" />
+
+    <ListView
+        android:layout_width="175dp"
+        android:layout_height="416dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="258dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="39dp"
+        android:layout_height="36dp"
+        android:text=">"
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="364dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price:"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="699dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="180dp"
+        android:layout_height="35dp"
+        android:text="Add to Order"
+        tools:layout_editor_absoluteX="224dp"
+        tools:layout_editor_absoluteY="690dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
