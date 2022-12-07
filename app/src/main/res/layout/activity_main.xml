@@ -1,34 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".FirstFragment">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/Theme.Proj5.AppBarOverlay">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.Proj5.PopupOverlay" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <include layout="@layout/content_main" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+    <TextView
+        android:id="@+id/textview_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:text="RU Pizzeria"
+        app:layout_constraintBottom_toTopOf="@id/button_first"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <Button
+        android:id="@+id/button_first4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="232dp"
+        android:text="Store Orders"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_first"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button_first2"
+        android:layout_width="172dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="448dp"
+        android:text="New York Style"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_first"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button_first3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="340dp"
+        android:text="Current Order"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_first"
+        app:layout_constraintVertical_bias="0.992" />
+
+    <Button
+        android:id="@+id/button_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="540dp"
+        android:text="Chicago Style"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_first" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--<?xml version="1.0" encoding="UTF-8"?>-->
+
+    <!--<?import javafx.geometry.Insets?>-->
+    <!--<?import javafx.scene.control.Button?>-->
+    <!--<?import javafx.scene.control.Label?>-->
+    <!--<?import javafx.scene.layout.AnchorPane?>-->
+    <!--<?import javafx.scene.layout.VBox?>-->
+    <!--<?import javafx.scene.text.Font?>-->
+
+    <!--<VBox alignment="CENTER" prefHeight="517.0" prefWidth="645.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project4.MainController">-->
+    <!--    <padding>-->
+    <!--        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />-->
+    <!--    </padding>-->
+    <!--   <children>-->
+    <!--      <AnchorPane prefHeight="495.0" prefWidth="629.0">-->
+    <!--         <children>-->
+    <!--            <Label layoutX="227.0" layoutY="14.0" text="RU Pizzeria">-->
+    <!--               <font>-->
+    <!--                  <Font size="32.0" />-->
+    <!--               </font>-->
+    <!--            </Label>-->
+    <!--            <Button fx:id="chicagoStyle" layoutX="250.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#chicagoStyleClick" prefHeight="29.0" prefWidth="106.0" text="Chicago Style" />-->
+    <!--            <Button fx:id="nyStyle" layoutX="250.0" layoutY="139.0" mnemonicParsing="false" onMouseClicked="#nyStyleClick" prefHeight="29.0" prefWidth="106.0" text="New York Style" />-->
+    <!--            <Button fx:id="currOrderButton" layoutX="250.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#currOrderClick" prefHeight="29.0" prefWidth="106.0" text="Current Order" />-->
+    <!--            <Button fx:id="storeOrderButton" layoutX="250.0" layoutY="247.0" mnemonicParsing="false" onMouseClicked="#storeOrderClick" prefHeight="29.0" prefWidth="106.0" text="Store Orders" />-->
+    <!--         </children>-->
+    <!--      </AnchorPane>-->
+    <!--   </children>-->
+    <!--</VBox>-->
