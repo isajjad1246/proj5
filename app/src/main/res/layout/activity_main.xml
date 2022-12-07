@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-<!--<-&ndash;&gt;-->
+
     <Button
         android:id="@+id/button_first4"
         android:layout_width="wrap_content"
