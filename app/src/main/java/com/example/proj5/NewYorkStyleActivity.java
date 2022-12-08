@@ -381,9 +381,9 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
     /**
      * Method for handling adding to order button
      *
-     * @param event
+     * @param view
      */
-    public void addPizzaToOrder(ActionEvent event) {
+    public void addPizzaToOrder(View view) {
         if (flavor.getSelectedItem().toString() == "Deluxe") {
             mainController.addPizzaToOrder(deluxe);
         } else if (flavor.getSelectedItem().toString() == "BBQ") {
@@ -428,15 +428,27 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
         switch (position) {
             case 0:
                 image.setImageResource(R.drawable.bbq_ny);
+                addButton.setEnabled(false);
+                removeButton.setEnabled(false);
+                BBQChickenFlavor();
                 break;
             case 1:
                 image.setImageResource(R.drawable.byo_ny);
+                addButton.setEnabled(true);
+                removeButton.setEnabled(true);
+                byoFlavor();
                 break;
             case 2:
                 image.setImageResource(R.drawable.deluxe_ny);
+                addButton.setEnabled(false);
+                removeButton.setEnabled(false);
+                deluxeFlavor();
                 break;
             case 3:
                 image.setImageResource(R.drawable.meatzza_ny);
+                addButton.setEnabled(false);
+                removeButton.setEnabled(false);
+                meatzzaFlavor();
                 break;
         }
     }
