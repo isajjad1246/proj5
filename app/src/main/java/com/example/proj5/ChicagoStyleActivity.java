@@ -61,7 +61,7 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
 
     /**
      * Method for flavor box
-     * @param event
+     * @param view
      * **/
     void selectFlavor(View view) {
         String flavorString = flavor.getSelectedItem().toString();
