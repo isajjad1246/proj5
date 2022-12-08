@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class NewYorkStyleActivity extends AppCompatActivity implements
+public class NewYorkStyleActivity2 extends AppCompatActivity implements
         AdapterView.OnItemSelectedListener{
 
     PizzaFactory pf = new NYPizza();
