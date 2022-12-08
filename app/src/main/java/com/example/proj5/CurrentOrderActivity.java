@@ -3,6 +3,7 @@ package com.example.proj5;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -16,8 +17,8 @@ public class CurrentOrderActivity extends AppCompatActivity {
 
     private Order currOrder = new Order();
     //figure out alternative to observable list
-    private ObservableList<Pizza> pizzaList = FXCollections.observableArrayList();
-    private ArrayList<Pizza> pizzaList = new ArrayList<Pizza>();
+    //private ObservableList<Pizza> pizzaList = FXCollections.observableArrayList();
+    //private ArrayList<Pizza> pizzaList = new ArrayList<Pizza>();
 
     private TextView orderNum;
     private ListView listViewOrders;
@@ -46,7 +47,9 @@ public class CurrentOrderActivity extends AppCompatActivity {
     public void display(){
         orderNum.setText(String.valueOf(currOrder.orderNumber));
         //figure out alternative to observable list
-        listViewOrders.setItems((ObservableList) currOrder.pizzaOrder);
+        ArrayAdapter<Pizza> temp = new ArrayAdapter<Pizza>(this, R.layout.activity_current_order, R.id.listViewOrders, currOrder.pizzaOrder );
+        listViewOrders.setAdapter(temp);
+        //listViewOrders.setItems((ObservableList) currOrder.pizzaOrder);
         subtotal = (TextView) findViewById(R.id.subtotal);
         subtotal.setText(String.valueOf(currOrder.orderCost));
 
