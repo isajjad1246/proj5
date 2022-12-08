@@ -132,7 +132,7 @@
         tools:layout_editor_absoluteY="665dp" />
 
     <EditText
-        android:id="@+id/textView6"
+        android:id="@+id/orderNum"
         android:layout_width="93dp"
         android:layout_height="36dp"
         android:text=""
