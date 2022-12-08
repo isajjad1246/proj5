@@ -48,10 +48,10 @@ public class ChicagoStyleController implements Initializable {
     private ComboBox<String> flavorBox;
     @FXML
     private ImageView imageView2;
-    private Image deluxeImage = new Image(getClass().getResourceAsStream("deluxe-chicago.png"));
-    private Image bbqImage = new Image(getClass().getResourceAsStream("bbq-chicago.png"));
-    private Image meatzzaImage = new Image(getClass().getResourceAsStream("meatzza-chicago.png"));
-    private Image byoImage = new Image(getClass().getResourceAsStream("byo-chicago.png"));
+    private Image deluxeImage = new Image(getClass().getResourceAsStream("deluxe_chicago.png"));
+    private Image bbqImage = new Image(getClass().getResourceAsStream("bbq_chicago.png"));
+    private Image meatzzaImage = new Image(getClass().getResourceAsStream("meatzza_chicago.png"));
+    private Image byoImage = new Image(getClass().getResourceAsStream("byo_chicago.png"));
 
     /**
      * Method for flavor box

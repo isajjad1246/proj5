@@ -50,17 +50,17 @@
         tools:layout_editor_absoluteY="131dp" />
 
     <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="146dp"
-        android:layout_height="31dp"
+        android:id="@+id/pizzaFlavor"
         tools:layout_editor_absoluteX="92dp"
         tools:layout_editor_absoluteY="79dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         tools:ignore="MissingConstraints" />
 
     <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="148dp"
-        android:layout_height="32dp"
+        android:id="@+id/sizeBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="92dp"
         tools:layout_editor_absoluteY="131dp"
         tools:ignore="MissingConstraints" />
@@ -98,4 +98,15 @@
         tools:layout_editor_absoluteX="224dp"
         tools:layout_editor_absoluteY="690dp"
         tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="162dp"
+        android:layout_height="147dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_launcher_background"
+        tools:layout_editor_absoluteX="213dp"
+        tools:layout_editor_absoluteY="42dp"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
