@@ -164,10 +164,11 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
     void addButton(View view){ //Toast/AlertDialog
         if(displayToppings.getAdapter().getCount() >= 7){
             Button ButtonType = null;
-            toastMessage();
-//            Alert alarm = new Alert(Alert.AlertType.ERROR, "cannot exceed 7 toppings!", ButtonType);
-//            alarm.setHeaderText("This is the maximum number of toppings");
-//            alarm.show();
+            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            alert.setTitle("Maximum number of toppings");
+            alert.setMessage("At most 7 toppings!");
+            alert.setPositiveButton("Ok", null);
+            alert.show();
         }
         else{
             String availableItem = availableToppings.getSelectedItem().toString();
