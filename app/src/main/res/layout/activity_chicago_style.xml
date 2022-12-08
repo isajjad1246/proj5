@@ -51,7 +51,7 @@
         tools:ignore="MissingConstraints" />
 
     <Spinner
-        android:id="@+id/flavorBox"
+        android:id="@+id/flavor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="92dp"
@@ -59,7 +59,7 @@
         tools:ignore="MissingConstraints" />
 
     <Spinner
-        android:id="@+id/sizeBox2"
+        android:id="@+id/sizeSpin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="92dp"

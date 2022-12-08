@@ -50,7 +50,7 @@
         tools:layout_editor_absoluteY="131dp" />
 
     <Spinner
-        android:id="@+id/flavorBox"
+        android:id="@+id/flavor"
         tools:layout_editor_absoluteX="92dp"
         tools:layout_editor_absoluteY="79dp"
         android:layout_width="wrap_content"
@@ -58,7 +58,7 @@
         tools:ignore="MissingConstraints" />
 
     <Spinner
-        android:id="@+id/sizeBox2"
+        android:id="@+id/sizeSpin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="92dp"
