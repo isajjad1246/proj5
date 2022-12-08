@@ -74,7 +74,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/removePizza"
+        android:id="@+id/removeButton"
         android:layout_width="121dp"
         android:layout_height="52dp"
         android:text="Remove Pizza"
@@ -84,7 +84,7 @@
         tools:layout_editor_absoluteY="558dp" />
 
     <Button
-        android:id="@+id/placeOrder"
+        android:id="@+id/addToOrderButton"
         android:layout_width="117dp"
         android:layout_height="50dp"
         android:text="Add Order"
@@ -94,7 +94,7 @@
         tools:layout_editor_absoluteY="611dp" />
 
     <Button
-        android:id="@+id/clearOrder"
+        android:id="@+id/cancelOrderButton"
         android:layout_width="118dp"
         android:layout_height="54dp"
         android:text="Clear Order"
