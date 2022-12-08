@@ -36,6 +36,9 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
     String size[] = new String[]{small, medium, large};
     private ImageView image;
 
+    Spinner flavor;
+    Spinner sizeSpin;
+
 
     private ComboBox<String> sizeBox2;
     private TextView priceBox2;
@@ -378,8 +381,6 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
         //System.out.println("added");
     }
 
-    Spinner flavor;
-    Spinner sizeSpin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
