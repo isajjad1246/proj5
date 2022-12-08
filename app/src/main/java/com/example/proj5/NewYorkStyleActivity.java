@@ -40,12 +40,12 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
     private Spinner sizeSpin;
 
 
-    private ComboBox<String> sizeBox2;
+    //private ComboBox<String> sizeBox2;
     private TextView priceBox2;
     private Button addButton;
     private Button removeButton;
     private Button addToOrderButton;
-    private ComboBox<String> flavorBox;
+    //private ComboBox<String> flavorBox;
 
     //imageview stuff
     /*private Image deluxeImage = new Image(getClass().getResourceAsStream("deluxe-ny.png"));

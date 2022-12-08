@@ -38,7 +38,7 @@ public class NewYorkStyleActivity2 extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_york_style);
-        flavor = (Spinner) findViewById(R.id.flavorBox); //getting instance of spinner
+        flavor = (Spinner) findViewById(R.id.flavor); //getting instance of spinner
         flavor.setOnItemSelectedListener(this);
 
         //Creating the ArrayAdapter instance having flavor list
@@ -47,7 +47,7 @@ public class NewYorkStyleActivity2 extends AppCompatActivity implements
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         flavor.setAdapter(adapter1);
 
-        sizeSpin = (Spinner) findViewById(R.id.sizeBox2);
+        sizeSpin = (Spinner) findViewById(R.id.sizeSpin);
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, size);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
