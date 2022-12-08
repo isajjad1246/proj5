@@ -168,7 +168,7 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
             alert.setTitle("Maximum number of toppings");
             alert.setMessage("At most 7 toppings!");
-            alert.setPositiveButton("Ok", null);
+            alert.setPositiveButton("Ok", null); /////
             alert.show();
         }
         else{
