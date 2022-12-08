@@ -50,7 +50,7 @@
         tools:layout_editor_absoluteY="131dp" />
 
     <Spinner
-        android:id="@+id/flavorBox"
+        android:id="@+id/flavor"
         tools:layout_editor_absoluteX="92dp"
         tools:layout_editor_absoluteY="79dp"
         android:layout_width="wrap_content"
@@ -58,7 +58,7 @@
         tools:ignore="MissingConstraints" />
 
     <Spinner
-        android:id="@+id/sizeBox2"
+        android:id="@+id/sizeSpin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="92dp"
@@ -107,6 +107,15 @@
         android:src="@drawable/ic_launcher_background"
         tools:layout_editor_absoluteX="213dp"
         tools:layout_editor_absoluteY="42dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/textView10"
+        android:layout_width="96dp"
+        android:layout_height="22dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="697dp"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
