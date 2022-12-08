@@ -7,7 +7,7 @@
     tools:context=".ChicagoStyleActivity">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/removeButton"
         android:layout_width="39dp"
         android:layout_height="36dp"
         android:text="<"
@@ -50,7 +50,7 @@
         tools:layout_editor_absoluteY="131dp" />
 
     <Spinner
-        android:id="@+id/pizzaFlavor"
+        android:id="@+id/flavorBox"
         tools:layout_editor_absoluteX="92dp"
         tools:layout_editor_absoluteY="79dp"
         android:layout_width="wrap_content"
@@ -58,7 +58,7 @@
         tools:ignore="MissingConstraints" />
 
     <Spinner
-        android:id="@+id/sizeBox"
+        android:id="@+id/sizeBox2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="92dp"
@@ -91,7 +91,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/addToOrderButton"
         android:layout_width="180dp"
         android:layout_height="35dp"
         android:text="Add to Order"

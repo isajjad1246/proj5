@@ -7,7 +7,7 @@
     tools:context=".ChicagoStyleActivity">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/removeButton"
         android:layout_width="39dp"
         android:layout_height="36dp"
         android:text="<"
@@ -16,11 +16,12 @@
         tools:ignore="MissingConstraints" />
 
     <ListView
+        android:id="@+id/displayToppings"
         android:layout_width="170dp"
         android:layout_height="415dp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="234dp"
-        tools:layout_editor_absoluteY="258dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="258dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -50,7 +51,7 @@
         tools:ignore="MissingConstraints" />
 
     <Spinner
-        android:id="@+id/pizzaFlavor"
+        android:id="@+id/flavorBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="92dp"
@@ -58,7 +59,7 @@
         tools:ignore="MissingConstraints" />
 
     <Spinner
-        android:id="@+id/sizeBox"
+        android:id="@+id/sizeBox2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="92dp"
@@ -66,11 +67,12 @@
         tools:ignore="MissingConstraints" />
 
     <ListView
+        android:id="@+id/availableToppings"
         android:layout_width="175dp"
         android:layout_height="416dp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="258dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="258dp" />
 
     <Button
         android:id="@+id/addButton"
@@ -91,7 +93,7 @@
         tools:layout_editor_absoluteY="699dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/addToOrderButton"
         android:layout_width="180dp"
         android:layout_height="35dp"
         android:text="Add to Order"
@@ -107,6 +109,14 @@
         android:src="@drawable/ic_launcher_background"
         tools:layout_editor_absoluteX="213dp"
         tools:layout_editor_absoluteY="42dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/priceBox2"
+        android:layout_width="90dp"
+        android:layout_height="23dp"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="699dp"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
