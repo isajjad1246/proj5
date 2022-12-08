@@ -40,12 +40,12 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
     Spinner flavor;
     Spinner sizeSpin;
 
-    private ComboBox<String> sizeBox2;
+    //private ComboBox<String> sizeBox2;
     private TextView priceBox2;
     private Button addButton;
     private Button removeButton;
     private Button addToOrderButton;
-    private ComboBox<String> flavorBox;
+    //private ComboBox<String> flavorBox;
 
     //image view stuff
     /*private ImageView imageView2;
@@ -157,9 +157,9 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
      * Method for add button
      * @param event
      * */
-    void addButton(MouseEvent event){
+    void addButton(MouseEvent event){ //Toast/AlertDialog
         if(displayToppings.getItems().size() >= 7){
-            ButtonType ButtonType = null;
+            Button ButtonType = null;
             Alert alarm = new Alert(Alert.AlertType.ERROR, "cannot exceed 7 toppings!", ButtonType);
             alarm.setHeaderText("This is the maximum number of toppings");
             alarm.show();
@@ -168,7 +168,7 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
             String availableItem = availableToppings.getSelectionModel().getSelectedItem();
             availableToppings.getItems().remove(availableItem);
             displayToppings.getItems().add(availableItem);
-            String result = flavorBox.getSelectionModel().getSelectedItem();
+            String result = flavor.getSelectionModel().getSelectedItem();
             if(result.equals("Build Your Own")){
                 byo.add(availableItem);
                 priceBox2.setText(Double.toString(byo.price()));
@@ -184,7 +184,7 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
         String availableItem = displayToppings.getSelectionModel().getSelectedItem();
         displayToppings.getItems().remove(availableItem);
         availableToppings.getItems().add(availableItem);
-        String result = flavorBox.getSelectionModel().getSelectedItem();
+        String result = flavor.getSelectionModel().getSelectedItem();
         if(result.equals("Build Your Own")){
             byo.remove(availableItem);
             priceBox2.setText(Double.toString(byo.price()));
@@ -203,12 +203,12 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
     @Override
     public void initialize(URL url, ResourceBundle rb){
         ObservableList<String> flavorList= FXCollections.observableArrayList("Deluxe", "BBQ", "Meatzza", "Build Your Own");
-        flavorBox.setItems(flavorList);
+        flavor.setItems(flavorList);
 
-        flavorBox.getSelectionModel().select("Build Your Own");
+        flavor.getSelectionModel().select("Build Your Own");
 
         ObservableList<String> size = FXCollections.observableArrayList("small", "medium", "large");
-        sizeBox2.setItems(size);
+        sizeSpin.setItems(size);
 
         availableToppings.getItems().addAll(NYView);
 //        toppingsList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
@@ -235,17 +235,17 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
             temp.add(deluxe.getToppings().get(i).toString());
         }
         displayToppings.setItems(temp);
-        if(flavorBox.getSelectionModel().getSelectedItem() == "Deluxe"){
+        if(flavor.getSelectionModel().getSelectedItem() == "Deluxe"){
             deluxe.setCrust(Crust.DEEP_DISH);
             //imageView2.setImage(deluxeImage);
         }
-        if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
+        if(sizeSpin.getSelectionModel().getSelectedItem() == "small"){
             deluxe.setSize(Size.SMALL);
             priceBox2.setText(String.valueOf(deluxe.price()));
-        }else if(sizeBox2.getSelectionModel().getSelectedItem() == "medium"){
+        }else if(sizeSpin.getSelectionModel().getSelectedItem() == "medium"){
             deluxe.setSize(Size.MEDIUM);
             priceBox2.setText(String.valueOf(deluxe.price()));
-        }else if(sizeBox2.getSelectionModel().getSelectedItem() == "large"){
+        }else if(sizeSpin.getSelectionModel().getSelectedItem() == "large"){
             deluxe.setSize(Size.LARGE);
             priceBox2.setText(String.valueOf(deluxe.price()));
         }
@@ -269,17 +269,17 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
             temp.add(bbq.getToppings().get(i).toString());
         }
         displayToppings.setItems(temp);
-        if(flavorBox.getSelectionModel().getSelectedItem() == "BBQ"){
+        if(flavor.getSelectionModel().getSelectedItem() == "BBQ"){
             bbq.setCrust(Crust.PAN);
             //imageView2.setImage(bbqImage);
         }
-        if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
+        if(sizeSpin.getSelectionModel().getSelectedItem() == "small"){
             bbq.setSize(Size.SMALL);
             priceBox2.setText(String.valueOf(bbq.price()));
-        }else if(sizeBox2.getSelectionModel().getSelectedItem() == "medium"){
+        }else if(sizeSpin.getSelectionModel().getSelectedItem() == "medium"){
             bbq.setSize(Size.MEDIUM);
             priceBox2.setText(String.valueOf(bbq.price()));
-        }else if(sizeBox2.getSelectionModel().getSelectedItem() == "large"){
+        }else if(sizeSpin.getSelectionModel().getSelectedItem() == "large"){
             bbq.setSize(Size.LARGE);
             priceBox2.setText(String.valueOf(bbq.price()));
         }
@@ -301,17 +301,17 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
             temp.add(meatzza.getToppings().get(i).toString());
         }
         displayToppings.setItems(temp);
-        if(flavorBox.getSelectionModel().getSelectedItem() == "Meatzza"){
+        if(flavor.getSelectionModel().getSelectedItem() == "Meatzza"){
             meatzza.setCrust(Crust.STUFFED);
             //imageView2.setImage(meatzzaImage);
         }
-        if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
+        if(sizeSpin.getSelectionModel().getSelectedItem() == "small"){
             meatzza.setSize(Size.SMALL);
             priceBox2.setText(String.valueOf(meatzza.price()));
-        }else if(sizeBox2.getSelectionModel().getSelectedItem() == "medium"){
+        }else if(sizeSpin.getSelectionModel().getSelectedItem() == "medium"){
             meatzza.setSize(Size.MEDIUM);
             priceBox2.setText(String.valueOf(meatzza.price()));
-        }else if(sizeBox2.getSelectionModel().getSelectedItem() == "large"){
+        }else if(sizeSpin.getSelectionModel().getSelectedItem() == "large"){
             meatzza.setSize(Size.LARGE);
             priceBox2.setText(String.valueOf(meatzza.price()));
         }
@@ -328,17 +328,17 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
         //set 2nd list view empty but changes on button click
         //when add pizza is clicked, create pizza.buildyourown() type
         //display price-increase every time topping is added
-        if(flavorBox.getSelectionModel().getSelectedItem() == "Build Your Own"){
+        if(flavor.getSelectionModel().getSelectedItem() == "Build Your Own"){
             byo.setCrust(Crust.PAN);
             //imageView2.setImage(byoImage);
         }
-        if(sizeBox2.getSelectionModel().getSelectedItem() == "small"){
+        if(sizeSpin.getSelectionModel().getSelectedItem() == "small"){
             byo.setSize(Size.SMALL);
             priceBox2.setText(String.valueOf(byo.price()));
-        }else if(sizeBox2.getSelectionModel().getSelectedItem() == "medium"){
+        }else if(sizeSpin.getSelectionModel().getSelectedItem() == "medium"){
             byo.setSize(Size.MEDIUM);
             priceBox2.setText(String.valueOf(byo.price()));
-        }else if(sizeBox2.getSelectionModel().getSelectedItem() == "large"){
+        }else if(sizeSpin.getSelectionModel().getSelectedItem() == "large"){
             byo.setSize(Size.LARGE);
             priceBox2.setText(String.valueOf(byo.price()));
         }
@@ -361,16 +361,16 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
      *
      * */
     public void addPizzaToOrder(ActionEvent event){
-        if (flavorBox.getSelectionModel().getSelectedItem() == "Deluxe") {
+        if (flavor.getSelectionModel().getSelectedItem() == "Deluxe") {
             mainController.addPizzaToOrder(deluxe);
         }
-        else if (flavorBox.getSelectionModel().getSelectedItem() == "BBQ") {
+        else if (flavor.getSelectionModel().getSelectedItem() == "BBQ") {
             mainController.addPizzaToOrder(bbq);
         }
-        else if (flavorBox.getSelectionModel().getSelectedItem() == "Meatzza") {
+        else if (flavor.getSelectionModel().getSelectedItem() == "Meatzza") {
             mainController.addPizzaToOrder(meatzza);
         }
-        else if (flavorBox.getSelectionModel().getSelectedItem() == "Build Your Own") {
+        else if (flavor.getSelectionModel().getSelectedItem() == "Build Your Own") {
             mainController.addPizzaToOrder(byo);
         }
         //System.out.println("added");
@@ -406,15 +406,19 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
         switch (position) {
             case 0:
                 image.setImageResource(R.drawable.bbq_chicago);
+                BBQChickenFlavor();
                 break;
             case 1:
                 image.setImageResource(R.drawable.byo_chicago);
+                byoFlavor();
                 break;
             case 2:
                 image.setImageResource(R.drawable.deluxe_chicago);
+                deluxeFlavor();
                 break;
             case 3:
                 image.setImageResource(R.drawable.meatzza_chicago);
+                meatzzaFlavor();
                 break;
         }
     }
