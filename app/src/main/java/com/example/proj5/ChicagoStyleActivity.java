@@ -3,14 +3,19 @@ package com.example.proj5;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ChicagoStyleActivity extends AppCompatActivity {
+public class ChicagoStyleActivity extends AppCompatActivity implements
+        AdapterView.OnItemSelectedListener{
     CurrentOrderController currentOrderController;
 
     private ListView availableToppings = new ListView;
@@ -21,6 +26,18 @@ public class ChicagoStyleActivity extends AppCompatActivity {
     Pizza bbq = pf.createBBQChicken();
     Pizza meatzza = pf.createMeatzza();
     Pizza byo = pf.createBuildYourOwn();
+
+    String small = String.valueOf(Size.SMALL);
+    String medium = String.valueOf(Size.MEDIUM);
+    String large = String.valueOf(Size.LARGE);
+
+
+    String flavorChoices[] = new String[]{String.valueOf(byo), String.valueOf(deluxe), String.valueOf(meatzza), String.valueOf(bbq)};
+    String size[] = new String[]{small, medium, large};
+    private ImageView image;
+
+    Spinner flavor;
+    Spinner sizeSpin;
 
     private ComboBox<String> sizeBox2;
     private TextView priceBox2;
@@ -362,5 +379,33 @@ public class ChicagoStyleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chicago_style);
+
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        int position = sizeSpin.getSelectedItemPosition();
+        image = new ImageView(this);
+
+        switch (position) {
+            case 0:
+                image.setImageResource(R.drawable.bbq_chicago);
+                break;
+            case 1:
+                image.setImageResource(R.drawable.byo_chicago);
+                break;
+            case 2:
+                image.setImageResource(R.drawable.deluxe_chicago);
+                break;
+            case 3:
+                image.setImageResource(R.drawable.meatzza_chicago);
+                break;
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }
