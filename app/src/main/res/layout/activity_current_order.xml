@@ -27,9 +27,10 @@
         tools:layout_editor_absoluteY="95dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/displayOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="display"
         android:text="Display Order"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="243dp"
@@ -73,7 +74,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/removeButton"
         android:layout_width="121dp"
         android:layout_height="52dp"
         android:text="Remove Pizza"
@@ -83,7 +84,7 @@
         tools:layout_editor_absoluteY="558dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/addToOrderButton"
         android:layout_width="117dp"
         android:layout_height="50dp"
         android:text="Add Order"
@@ -93,12 +94,39 @@
         tools:layout_editor_absoluteY="611dp" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/cancelOrderButton"
         android:layout_width="118dp"
         android:layout_height="54dp"
         android:text="Clear Order"
         android:textSize="10dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="262dp"
+        tools:layout_editor_absoluteY="665dp" />
+
+    <EditText
+        android:id="@+id/subtotal"
+        android:layout_width="111dp"
+        android:layout_height="33dp"
+        android:inputType="text"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="566dp" />
+
+    <EditText
+        android:id="@+id/salesTax"
+        android:layout_width="113dp"
+        android:layout_height="30dp"
+        android:inputType="text"
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="615dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/orderTotal"
+        android:layout_width="113dp"
+        android:layout_height="25dp"
+        android:inputType="text"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="108dp"
         tools:layout_editor_absoluteY="665dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

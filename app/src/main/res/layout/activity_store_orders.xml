@@ -25,7 +25,7 @@
         tools:ignore="MissingConstraints" />
 
     <Spinner
-        android:id="@+id/spinner3"
+        android:id="@+id/orderNumBox"
         android:layout_width="234dp"
         android:layout_height="30dp"
         tools:ignore="MissingConstraints"
@@ -42,14 +42,15 @@
         tools:ignore="MissingConstraints" />
 
     <ListView
+        android:id="@+id/storeOrderListView"
         android:layout_width="362dp"
         android:layout_height="387dp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="172dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="172dp" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/cancelOrderButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cancel Order"
@@ -58,11 +59,19 @@
         tools:layout_editor_absoluteY="574dp" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/exportStoreOrdersButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Export Store Orders"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="179dp"
         tools:layout_editor_absoluteY="574dp" />
+
+    <EditText
+        android:id="@+id/orderTotalTextBox"
+        android:layout_width="114dp"
+        android:layout_height="35dp"
+        tools:layout_editor_absoluteX="204dp"
+        tools:layout_editor_absoluteY="130dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
