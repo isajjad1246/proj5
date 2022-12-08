@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -23,8 +24,8 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
         AdapterView.OnItemSelectedListener{
     CurrentOrderController currentOrderController;
 
-    private ListView availableToppings = new ListView;
-    private ListView displayToppings = new ListView;
+    private ListView availableToppings;
+    private ListView displayToppings;
 
     PizzaFactory pf = new ChicagoPizza();
     Pizza deluxe = pf.createDeluxe();
@@ -45,7 +46,7 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
     Spinner sizeSpin;
 
     //private ComboBox<String> sizeBox2;
-    private TextView priceBox2;
+    private EditText priceBox2;
     private Button addButton;
     private Button removeButton;
     private Button addToOrderButton;
