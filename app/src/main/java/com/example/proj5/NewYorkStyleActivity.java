@@ -7,20 +7,25 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class NewYorkStyleActivity extends AppCompatActivity implements
         AdapterView.OnItemSelectedListener {
 
-    private ListView<String> availableToppings = new ListView<>();
+    private ListView availableToppings;
+    private ListView displayToppings;
+    ArrayAdapter<String> tempTopping;
 
-    private ListView<String> displayToppings = new ListView<>();
     PizzaFactory pf = new NYPizza();
     Pizza deluxe = pf.createDeluxe();
     Pizza bbq = pf.createBBQChicken();
@@ -41,7 +46,7 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
 
 
     //private ComboBox<String> sizeBox2;
-    private TextView priceBox2;
+    private EditText priceBox2;
     private Button addButton;
     private Button removeButton;
     private Button addToOrderButton;
@@ -67,33 +72,33 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
     /**
      * Method for selecting pizza flavor type
      *
-     * @param event
+     * @param view
      */
-    void selectFlavor(ActionEvent event) {
-        String flavorString = flavorBox.getSelectionModel().getSelectedItem().toString();
+    void selectFlavor(View view) {
+        String flavorString = flavor.getSelectedItem().toString();
         if (flavorString.equalsIgnoreCase("Deluxe")) {
-            imageView2.setImage(deluxeImage);
-            addButton.setDisable(true);
-            removeButton.setDisable(true);
+            //imageView2.setImage(deluxeImage);
+            addButton.setEnabled(false);
+            removeButton.setEnabled(false);
             deluxeFlavor();
             //selectSize(event, deluxe);
         }
         if (flavorString.equalsIgnoreCase("BBQ")) {
-            imageView2.setImage(bbqImage);
-            addButton.setDisable(true);
-            removeButton.setDisable(true);
+            //imageView2.setImage(bbqImage);
+            addButton.setEnabled(false);
+            removeButton.setEnabled(false);
             BBQChickenFlavor();
         }
         if (flavorString.equalsIgnoreCase("Meatzza")) {
-            imageView2.setImage(meatzzaImage);
-            addButton.setDisable(true);
-            removeButton.setDisable(true);
+            //imageView2.setImage(meatzzaImage);
+            addButton.setEnabled(false);
+            removeButton.setEnabled(false);
             meatzzaFlavor();
         }
         if (flavorString.equalsIgnoreCase("Build Your Own")) {
-            imageView2.setImage(byoImage);
-            addButton.setDisable(false);
-            removeButton.setDisable(false);
+            //imageView2.setImage(byoImage);
+            addButton.setEnabled(true);
+            removeButton.setEnabled(true);
             byoFlavor();
         }
 
@@ -102,11 +107,11 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
     /**
      * Method for size box
      *
-     * @param event
+     * @param view
      */
-    void selectSize(ActionEvent event) {
-        String flavorString = flavorBox.getSelectionModel().getSelectedItem().toString();
-        String sizeString = sizeBox2.getSelectionModel().getSelectedItem().toString();
+    void selectSize(View view) {
+        String flavorString = flavor.getSelectedItem().toString();
+        String sizeString = sizeSpin.getSelectedItem().toString();
         if (flavorString.equalsIgnoreCase("Deluxe")) {
             if (sizeString.equalsIgnoreCase(Size.SMALL.toString())) {
                 deluxe.setSize(Size.SMALL);
@@ -163,19 +168,20 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
     /**
      * Method for add button
      *
-     * @param event
+     * @param view
      */
-    void addButton(MouseEvent event) {
-        if (displayToppings.getItems().size() >= 7) {
+    void addButton(View view) {
+        if (displayToppings.getAdapter().getCount() >= 7) {
             ButtonType ButtonType = null;
             Alert alarm = new Alert(Alert.AlertType.ERROR, "cannot exceed 7 toppings!", ButtonType);
             alarm.setHeaderText("This is the maximum number of toppings");
             alarm.show();
         } else {
-            String availableItem = availableToppings.getSelectionModel().getSelectedItem();
-            availableToppings.getItems().remove(availableItem);
+            String availableItem = availableToppings.getSelectedItem().toString();
+            //String availableItem = availableToppings.getItemAtPosition();
+            availableToppings.remove(availableItem);
             displayToppings.getItems().add(availableItem);
-            String result = flavorBox.getSelectionModel().getSelectedItem();
+            String result = flavor.getSelectedItem().toString();
             if (result.equals("Build Your Own")) {
                 byo.add(availableItem);
                 priceBox2.setText(Double.toString(byo.price()));
@@ -186,13 +192,13 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
     /**
      * Method for remove button
      *
-     * @param event
+     * @param view
      */
-    void removeButton(MouseEvent event) {
-        String availableItem = displayToppings.getSelectionModel().getSelectedItem();
+    void removeButton(View view) {
+        String availableItem = displayToppings.getSelectedItem().toString();
         displayToppings.getItems().remove(availableItem);
         availableToppings.getItems().add(availableItem);
-        String result = flavorBox.getSelectionModel().getSelectedItem();
+        String result = flavor.getSelectedItem().toString();
         if (result.equals("Build Your Own")) {
             byo.remove(availableItem);
             priceBox2.setText(Double.toString(byo.price()));
@@ -209,7 +215,7 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
      * @param url
      * @param rb
      */
-    @Override
+    /*@Override
     public void initialize(URL url, ResourceBundle rb) {
         ObservableList<String> flavorList = FXCollections.observableArrayList("Deluxe", "BBQ", "Meatzza", "Build Your Own");
         flavorBox.setItems(flavorList);
@@ -226,14 +232,14 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
 //
 //            }
 //        });
-    }
+    }*/
 
     /**
      * Method for handling adding to order button
      *
-     * @param event
+     * @param view
      */
-    public void addToOrderButton(ActionEvent event) {
+    public void addToOrderButton(View view) {
 
     }
 
@@ -248,26 +254,29 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
         //when add pizza is clicked, create pizza.deluxe() type
         //display price
 
-        ObservableList<String> temp = FXCollections.observableArrayList();
+        //ObservableList<String> temp = FXCollections.observableArrayList();
+        ArrayList temp = new ArrayList();
         for (int i = 0; i < deluxe.getToppings().size(); i++) {
             temp.add(deluxe.getToppings().get(i).toString());
         }
-        displayToppings.setItems(temp);
+        //displayToppings.setItems(temp);
+        tempTopping = new ArrayAdapter<String>(this, R.layout.activity_new_york_style, R.id.displayToppings, temp);
+        displayToppings.setAdapter(tempTopping);
         System.out.println("in deluxe");
 
-        if (flavorBox.getSelectionModel().getSelectedItem() == "Deluxe") {
+        if (flavor.getSelectedItem().toString() == "Deluxe") {
             deluxe.setCrust(Crust.BROOKLYN);
-            imageView2.setImage(deluxeImage);
+            //imageView2.setImage(deluxeImage);
         }
-        if (sizeBox2.getSelectionModel().getSelectedItem() == "small ") {
+        if (sizeSpin.getSelectedItem().toString() == "small ") {
             deluxe.setSize(Size.SMALL);
             priceBox2.setText(String.valueOf(deluxe.price()));
             System.out.println("price" + deluxe.price());
 
-        } else if (sizeBox2.getSelectionModel().getSelectedItem() == "medium") {
+        } else if (sizeSpin.getSelectedItem().toString() == "medium") {
             deluxe.setSize(Size.MEDIUM);
             priceBox2.setText(String.valueOf(deluxe.price()));
-        } else if (sizeBox2.getSelectionModel().getSelectedItem() == "large") {
+        } else if (sizeSpin.getSelectedItem().toString() == "large") {
             deluxe.setSize(Size.LARGE);
             priceBox2.setText(String.valueOf(deluxe.price()));
         }
@@ -285,22 +294,25 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
         //set 2nd list view to chicago bbqchicken toppings
         //when add pizza is clicked, create pizza.bbqchicken() type
         //display price
-        ObservableList<String> temp = FXCollections.observableArrayList();
+        //ObservableList<String> temp = FXCollections.observableArrayList();
+        ArrayList temp = new ArrayList();
         for (int i = 0; i < bbq.getToppings().size(); i++) {
             temp.add(bbq.getToppings().get(i).toString());
         }
-        displayToppings.setItems(temp);
-        if (flavorBox.getSelectionModel().getSelectedItem() == "BBQ") {
+        //displayToppings.setItems(temp);
+        tempTopping = new ArrayAdapter<String>(this, R.layout.activity_new_york_style, R.id.displayToppings, temp);
+        displayToppings.setAdapter(tempTopping);
+        if (flavor.getSelectedItem().toString() == "BBQ") {
             bbq.setCrust(Crust.THIN);
-            imageView2.setImage(bbqImage);
+            //imageView2.setImage(bbqImage);
         }
-        if (sizeBox2.getSelectionModel().getSelectedItem() == "small") {
+        if (sizeSpin.getSelectedItem().toString() == "small") {
             bbq.setSize(Size.SMALL);
             priceBox2.setText(String.valueOf(bbq.price()));
-        } else if (sizeBox2.getSelectionModel().getSelectedItem() == "medium") {
+        } else if (sizeSpin.getSelectedItem().toString() == "medium") {
             bbq.setSize(Size.MEDIUM);
             priceBox2.setText(String.valueOf(bbq.price()));
-        } else if (sizeBox2.getSelectionModel().getSelectedItem() == "large") {
+        } else if (sizeSpin.getSelectedItem().toString() == "large") {
             bbq.setSize(Size.LARGE);
             priceBox2.setText(String.valueOf(bbq.price()));
         }
@@ -316,22 +328,25 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
         //set 2nd list view to chicago deluxe toppings
         //when add pizza is clicked, create pizza.deluxe() type
         //display price
-        ObservableList<String> temp = FXCollections.observableArrayList();
+        //ObservableList<String> temp = FXCollections.observableArrayList();
+        ArrayList<String> temp = new ArrayList<>();
         for (int i = 0; i < meatzza.getToppings().size(); i++) {
             temp.add(meatzza.getToppings().get(i).toString());
         }
-        displayToppings.setItems(temp);
-        if (flavorBox.getSelectionModel().getSelectedItem() == "Meatzza") {
+        //displayToppings.setItems(temp);
+        tempTopping = new ArrayAdapter<String>(this, R.layout.activity_new_york_style, R.id.displayToppings, temp);
+        displayToppings.setAdapter(tempTopping);
+        if (flavor.getSelectedItem().toString() == "Meatzza") {
             meatzza.setCrust(Crust.HAND_TOSSED);
-            imageView2.setImage(meatzzaImage);
+            //imageView2.setImage(meatzzaImage);
         }
-        if (sizeBox2.getSelectionModel().getSelectedItem() == "small") {
+        if (sizeSpin.getSelectedItem().toString() == "small") {
             meatzza.setSize(Size.SMALL);
             priceBox2.setText(String.valueOf(meatzza.price()));
-        } else if (sizeBox2.getSelectionModel().getSelectedItem() == "medium") {
+        } else if (sizeSpin.getSelectedItem().toString() == "medium") {
             meatzza.setSize(Size.MEDIUM);
             priceBox2.setText(String.valueOf(meatzza.price()));
-        } else if (sizeBox2.getSelectionModel().getSelectedItem() == "large") {
+        } else if (sizeSpin.getSelectedItem().toString() == "large") {
             meatzza.setSize(Size.LARGE);
             priceBox2.setText(String.valueOf(meatzza.price()));
         }
@@ -347,17 +362,17 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
         //set 2nd list view empty but changes on button click
         //when add pizza is clicked, create pizza.buildyourown() type
         //display price- increase every time topping is added
-        if (flavorBox.getSelectionModel().getSelectedItem() == "Build Your Own") {
+        if (flavor.getSelectedItem().toString() == "Build Your Own") {
             byo.setCrust(Crust.HAND_TOSSED);
-            imageView2.setImage(byoImage);
+            //imageView2.setImage(byoImage);
         }
-        if (sizeBox2.getSelectionModel().getSelectedItem() == "small") {
+        if (sizeSpin.getSelectedItem().toString() == "small") {
             byo.setSize(Size.SMALL);
             priceBox2.setText(String.valueOf(byo.price()));
-        } else if (sizeBox2.getSelectionModel().getSelectedItem() == "medium") {
+        } else if (sizeSpin.getSelectedItem().toString() == "medium") {
             byo.setSize(Size.MEDIUM);
             priceBox2.setText(String.valueOf(byo.price()));
-        } else if (sizeBox2.getSelectionModel().getSelectedItem() == "large") {
+        } else if (sizeSpin.getSelectedItem().toString() == "large") {
             byo.setSize(Size.LARGE);
             priceBox2.setText(String.valueOf(byo.price()));
         }
@@ -369,13 +384,13 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
      * @param event
      */
     public void addPizzaToOrder(ActionEvent event) {
-        if (flavorBox.getSelectionModel().getSelectedItem() == "Deluxe") {
+        if (flavor.getSelectedItem().toString() == "Deluxe") {
             mainController.addPizzaToOrder(deluxe);
-        } else if (flavorBox.getSelectionModel().getSelectedItem() == "BBQ") {
+        } else if (flavor.getSelectedItem().toString() == "BBQ") {
             mainController.addPizzaToOrder(bbq);
-        } else if (flavorBox.getSelectionModel().getSelectedItem() == "Meatzza") {
+        } else if (flavor.getSelectedItem().toString() == "Meatzza") {
             mainController.addPizzaToOrder(meatzza);
-        } else if (flavorBox.getSelectionModel().getSelectedItem() == "Build Your Own") {
+        } else if (flavor.getSelectedItem().toString() == "Build Your Own") {
             mainController.addPizzaToOrder(byo);
         }
         //System.out.println("added");
