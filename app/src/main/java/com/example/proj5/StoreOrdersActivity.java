@@ -3,6 +3,7 @@ package com.example.proj5;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -32,10 +33,10 @@ public class StoreOrdersActivity extends AppCompatActivity {
     }
     /**
      * Method for handling orderDropDown
-     * @param actionEvent
+     * @param view
      *
      * */
-    public void orderDropDown(ActionEvent actionEvent) {
+    public void orderDropDown(View view) {
 
     }
 
