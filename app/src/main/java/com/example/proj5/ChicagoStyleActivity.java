@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -380,6 +381,20 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chicago_style);
 
+        flavor = (Spinner) findViewById(R.id.flavor); //getting instance of spinner
+        flavor.setOnItemSelectedListener(this);
+
+        //Creating the ArrayAdapter instance having flavor list
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, flavorChoices);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        flavor.setAdapter(adapter1);
+
+        sizeSpin = (Spinner) findViewById(R.id.sizeSpin);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, size);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        flavor.setAdapter(adapter2);
 
     }
 
