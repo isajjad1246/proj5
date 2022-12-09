@@ -201,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
      * @param fxmlRoot
      * @param stageTitle
      * */
-    private void load(String fxmlRoot, String stageTitle) throws IOException{
+    /*private void load(String fxmlRoot, String stageTitle) throws IOException{
         if(stage != null){
             stage.close();
         }
@@ -230,7 +230,7 @@ public class MainActivity extends AppCompatActivity {
             controller.setMainController(this);
         }
         stage.show();
-    }
+    }*/
 
     /**
      * Method to add pizza to order
@@ -246,6 +246,13 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        chicagoStyle = findViewById(R.id.page1);
+        b1.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(MainActivity.this,MainActivity2.class);
+                        startActivity(i);
 
         /*setSupportActionBar(binding.toolbar);
 
