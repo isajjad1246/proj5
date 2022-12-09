@@ -454,34 +454,44 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
 
         switch (position) {
             case 0:
-                image.setImageResource(R.drawable.bbq_chicago);
-                addButton.setEnabled(false);
-                removeButton.setEnabled(false);
-                BBQChickenFlavor();
-                break;
-            case 1:
                 image.setImageResource(R.drawable.byo_chicago);
                 addButton.setEnabled(true);
                 removeButton.setEnabled(true);
                 byoFlavor();
                 break;
-            case 2:
+            case 1:
                 image.setImageResource(R.drawable.deluxe_chicago);
                 addButton.setEnabled(false);
                 removeButton.setEnabled(false);
                 deluxeFlavor();
                 break;
-            case 3:
+            case 2:
                 image.setImageResource(R.drawable.meatzza_chicago);
                 addButton.setEnabled(false);
                 removeButton.setEnabled(false);
                 meatzzaFlavor();
                 break;
+            case 3:
+                image.setImageResource(R.drawable.bbq_chicago);
+                addButton.setEnabled(false);
+                removeButton.setEnabled(false);
+                BBQChickenFlavor();
+                break;
         }
+
+//        int positionSize = sizeSpin.getSelectedItemPosition();
+//        switch (positionSize){
+//            case 0:
+//                size
+ //       }
+
+
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
+
 }
