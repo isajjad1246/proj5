@@ -23,7 +23,7 @@ import java.util.ResourceBundle;
 
 public class ChicagoStyleActivity extends AppCompatActivity implements
         AdapterView.OnItemSelectedListener{
-    CurrentOrderController currentOrderController;
+    ChicagoStyleActivity currentOrderController;
 
     private ListView availableToppings;
     private ListView displayToppings;

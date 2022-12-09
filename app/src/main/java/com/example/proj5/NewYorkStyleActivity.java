@@ -59,14 +59,14 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
     private Image meatzzaImage = new Image(getClass().getResourceAsStream("meatzza-ny.png"));
     private Image byoImage = new Image(getClass().getResourceAsStream("byo-ny.png"));*/
 
-    private MainController mainController; //controller for main view
+    private MainActivity mainController; //controller for main view
 
     /**
      * Method for handling controllers for main view controller
      *
      * @param mainController
      */
-    public void setMainController(MainController mainController) {
+    public void setMainController(MainActivity mainController) {
         this.mainController = mainController;
     }
 
