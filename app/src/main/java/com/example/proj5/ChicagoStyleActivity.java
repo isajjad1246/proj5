@@ -175,8 +175,8 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
         }
         else{
             String availableItem = availableToppings.getSelectedItem().toString();
-            availableToppings.getItems().remove(availableItem);
-            displayToppings.getItems().add(availableItem);
+            //availableToppings.getItems().remove(availableItem);
+            //displayToppings.getItems().add(availableItem);
             String result = flavor.getSelectedItem().toString();
             if(result.equals("Build Your Own")){
                 byo.add(availableItem);
@@ -191,8 +191,8 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
      * */
     void removeButton(View view){
         String availableItem = displayToppings.getSelectedItem().toString();
-        displayToppings.getItems().remove(availableItem);
-        availableToppings.getItems().add(availableItem);
+        //displayToppings.getItems().remove(availableItem);
+        //availableToppings.getItems().add(availableItem);
         String result = flavor.getSelectedItem().toString();
         if(result.equals("Build Your Own")){
             byo.remove(availableItem);

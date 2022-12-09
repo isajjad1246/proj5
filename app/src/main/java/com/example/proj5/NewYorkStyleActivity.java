@@ -185,8 +185,8 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
         } else {
             String availableItem = availableToppings.getSelectedItem().toString();
             //String availableItem = availableToppings.getItemAtPosition();
-            availableToppings.remove(availableItem);
-            displayToppings.getItems().add(availableItem);
+            //availableToppings.remove(availableItem);
+            //displayToppings.getItems().add(availableItem);
             String result = flavor.getSelectedItem().toString();
             if (result.equals("Build Your Own")) {
                 byo.add(availableItem);
@@ -202,8 +202,8 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
      */
     void removeButton(View view) {
         String availableItem = displayToppings.getSelectedItem().toString();
-        displayToppings.getItems().remove(availableItem);
-        availableToppings.getItems().add(availableItem);
+        //displayToppings.getItems().remove(availableItem);
+        //availableToppings.getItems().add(availableItem);
         String result = flavor.getSelectedItem().toString();
         if (result.equals("Build Your Own")) {
             byo.remove(availableItem);
