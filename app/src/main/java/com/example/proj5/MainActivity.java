@@ -248,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
 
         //binding = ActivityMainBinding.inflate(getLayoutInflater());
         //setContentView(binding.getRoot());
-
+        Button chicagoStyle = findViewById(R.id.chicagoStyle);
         chicagoStyle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -257,6 +257,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button nyStyle = findViewById(R.id.nyStyle);
         nyStyle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -265,6 +266,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button currOrderButton = findViewById(R.id.currOrderButton);
         currOrderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -273,6 +275,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button storeOrderButton = findViewById(R.id.storeOrderButton);
         storeOrderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

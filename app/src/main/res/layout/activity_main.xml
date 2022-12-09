@@ -12,13 +12,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RU Pizzeria"
-        app:layout_constraintBottom_toTopOf="@id/button_first"
+        app:layout_constraintBottom_toTopOf="@id/chicagoStyle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button_first4"
+        android:id="@+id/storeOrderButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="232dp"
@@ -31,7 +31,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button_first2"
+        android:id="@+id/nyStyle"
         android:layout_width="172dp"
         android:layout_height="48dp"
         android:layout_marginBottom="448dp"
@@ -44,7 +44,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button_first3"
+        android:id="@+id/currOrderButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="340dp"
@@ -57,7 +57,7 @@
         app:layout_constraintVertical_bias="0.992" />
 
     <Button
-        android:id="@+id/button_first"
+        android:id="@+id/chicagoStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="540dp"
