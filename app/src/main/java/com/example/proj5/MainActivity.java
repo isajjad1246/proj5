@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
      * Method for chicagoStyle Button
      *
      * */
-    public void chicagoStyleClick() throws IOException {
+    /*public void chicagoStyleClick() throws IOException {
         //open new window to chicago style view
 //        Parent root = FXMLLoader.load(getClass().getResource("ChicagoStyle-view.xml"));
 //        Scene scene = new Scene(root);
@@ -136,12 +136,12 @@ public class MainActivity extends AppCompatActivity {
         load("ChicagoStyle-view.xml", "Chicago Pizza");
 
 
-    }
+    }*/
 
     /**
      * Method for NY Style Button
      * */
-    public void nyStyleClick() throws IOException {
+    /*public void nyStyleClick() throws IOException {
         //open new window to ny style view
 //        Parent root = FXMLLoader.load(getClass().getResource("NewYorkStyle-view.fxml"));
 //        Scene scene = new Scene(root);
@@ -154,14 +154,14 @@ public class MainActivity extends AppCompatActivity {
 //        stage.setTitle("NY Pizza");
         load("NewYorkStyle-view.fxml", "NY Pizza");
 
-    }
+    }*/
 
 
     /**
      * Method for Current Order Button
      *
      * */
-    public void currOrderClick() throws IOException {
+    /*public void currOrderClick() throws IOException {
 //        FXMLLoader loader = new FXMLLoader(getClass().getResource("CurrentOrder-view.xml"));
 //        //open new window to current order view
 //        Parent root = loader.load();
@@ -175,13 +175,13 @@ public class MainActivity extends AppCompatActivity {
 //        root = FXMLLoader.load(getClass().getResource("CurrentOrder-view.xml"));
 //        stage.setTitle("Current Order");
         load("CurrentOrder-view.xml", "Current Order");
-    }
+    }*/
 
 
     /**
      * Method for store order click
      * */
-    public void storeOrderClick() throws IOException {
+    /*public void storeOrderClick() throws IOException {
 //        FXMLLoader loader = new FXMLLoader(getClass().getResource("StoreOrders-view.fxml"));
 //        //open new window to store order view
 //        Parent root = loader.load();
@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
 
         load("StoreOrders-view.fxml", "Store Order");
 
-    }
+    }*/
 
 
     /**
@@ -249,10 +249,36 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         chicagoStyle.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent i = new Intent(MainActivity.this,ChicagoStyleActivity.class);
-                        startActivity(i);
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(MainActivity.this, ChicagoStyleActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+        nyStyle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(MainActivity.this, NewYorkStyleActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+        currOrderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(MainActivity.this, CurrentOrderActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+        storeOrderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(MainActivity.this, StoreOrdersActivity.class);
+                startActivity(myIntent);
+            }
+        });
 
         /*setSupportActionBar(binding.toolbar);
 
@@ -268,6 +294,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
