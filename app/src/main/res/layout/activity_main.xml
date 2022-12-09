@@ -33,7 +33,7 @@
     <Button
         android:id="@+id/button_first2"
         android:layout_width="172dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="448dp"
         android:text="New York Style"
         app:layout_constraintBottom_toBottomOf="parent"

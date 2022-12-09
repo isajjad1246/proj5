@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class StoreOrdersActivity extends AppCompatActivity {
 
-    private CurrentOrderController currentOrderController;
+    private CurrentOrderActivity currentOrderController;
 
     private StoreOrders storeOrder = new StoreOrders();
     //private ComboBox <Integer> orderNumBox;
@@ -21,14 +21,14 @@ public class StoreOrdersActivity extends AppCompatActivity {
     public Button cancelOrderButton;
     public Button exportStoreOrdersButton;
 
-    private MainController mainController; //controller for main view
+    private MainActivity mainController; //controller for main view
 
     /**
      * Method for handling controllers for main view controller
      * @param mainController
      *
      * */
-    public void setMainController(MainController mainController){
+    public void setMainController(MainActivity mainController){
         this.mainController = mainController;
     }
     /**

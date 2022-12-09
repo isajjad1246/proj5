@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -12,8 +13,8 @@ import java.util.ArrayList;
 
 public class CurrentOrderActivity extends AppCompatActivity {
 
-    private ChicagoStyleController chicagoStyleController;
-    private NewYorkStyleController newYorkStyleController;
+    private ChicagoStyleActivity chicagoStyleController;
+    private NewYorkStyleActivity newYorkStyleController;
 
     private Order currOrder = new Order();
     //figure out alternative to observable list
@@ -22,22 +23,22 @@ public class CurrentOrderActivity extends AppCompatActivity {
 
     private TextView orderNum;
     private ListView listViewOrders;
-    private TextView subtotal;
-    private TextView salesTax;
-    private TextView orderTotal;
+    private EditText subtotal;
+    private EditText salesTax;
+    private EditText orderTotal;
     private Button displayOrder;
     private Button removePizza;
     private Button placeOrder;
     private Button clearOrder;
 
-    private MainController mainController; //controller for main view
+    private MainActivity mainController; //controller for main view
 
     /**
      * Method for handling controllers for main view controller
      * @param mainController
      *
      * */
-    public void setMainController(MainController mainController){
+    public void setMainController(MainActivity mainController){
         this.mainController = mainController;
     }
 
@@ -50,13 +51,13 @@ public class CurrentOrderActivity extends AppCompatActivity {
         ArrayAdapter<Pizza> temp = new ArrayAdapter<Pizza>(this, R.layout.activity_current_order, R.id.listViewOrders, currOrder.pizzaOrder );
         listViewOrders.setAdapter(temp);
         //listViewOrders.setItems((ObservableList) currOrder.pizzaOrder);
-        subtotal = (TextView) findViewById(R.id.subtotal);
+        subtotal = (EditText) findViewById(R.id.subtotal);
         subtotal.setText(String.valueOf(currOrder.orderCost));
 
-        salesTax = (TextView) findViewById(R.id.salesTax);
+        salesTax = (EditText) findViewById(R.id.salesTax);
         salesTax.setText(String.valueOf(currOrder.orderCost*.0625));
 
-        orderTotal = (TextView) findViewById(R.id.orderTotal);
+        orderTotal = (EditText) findViewById(R.id.orderTotal);
         currOrder.orderCost = currOrder.orderCost*1.0625;
         orderTotal.setText(String.valueOf(currOrder.orderCost));
 
