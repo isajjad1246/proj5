@@ -27,8 +27,8 @@
     <Spinner
         android:id="@+id/orderNumBox"
         android:layout_width="234dp"
-        android:layout_height="30dp"
-        tools:ignore="MissingConstraints"
+        android:layout_height="48dp"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
         tools:layout_editor_absoluteX="118dp"
         tools:layout_editor_absoluteY="74dp" />
 
@@ -70,8 +70,8 @@
     <EditText
         android:id="@+id/orderTotalTextBox"
         android:layout_width="114dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
         tools:layout_editor_absoluteX="204dp"
-        tools:layout_editor_absoluteY="130dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="130dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
