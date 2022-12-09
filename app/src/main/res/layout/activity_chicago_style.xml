@@ -10,7 +10,7 @@
         android:id="@+id/removeButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:text="<"
+        android:text="remove"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="186dp"
         tools:layout_editor_absoluteY="415dp" />
@@ -81,7 +81,7 @@
         android:id="@+id/addButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:text=">"
+        android:text="add"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="186dp"
         tools:layout_editor_absoluteY="364dp" />
