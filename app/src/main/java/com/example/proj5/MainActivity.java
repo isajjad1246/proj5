@@ -1,5 +1,6 @@
 package com.example.proj5;
 
+import android.content.Intent;
 import android.media.audiofx.DynamicsProcessing;
 import android.os.Bundle;
 
@@ -246,12 +247,11 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        chicagoStyle = findViewById(R.id.page1);
-        b1.setOnClickListener(
-                new View.OnClickListener() {
+
+        chicagoStyle.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent i = new Intent(MainActivity.this,MainActivity2.class);
+                        Intent i = new Intent(MainActivity.this,ChicagoStyleActivity.class);
                         startActivity(i);
 
         /*setSupportActionBar(binding.toolbar);
