@@ -1,5 +1,7 @@
 package com.example.proj5;
-
+/**
+ * @author Reiya Dave, Ifrah Sajjad
+ * */
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -9,6 +11,9 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+/**
+ * class method for store orders activity file
+ * */
 public class StoreOrdersActivity extends AppCompatActivity {
 
     private CurrentOrderActivity currentOrderController;
@@ -40,6 +45,10 @@ public class StoreOrdersActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * on create method for activity for store orders
+     * @param savedInstanceState
+     * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

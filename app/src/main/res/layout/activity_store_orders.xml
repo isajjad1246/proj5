@@ -10,68 +10,113 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="19dp"
         android:text="Store Orders:"
-        tools:layout_editor_absoluteX="170dp"
-        tools:layout_editor_absoluteY="36dp"
+        app:layout_constraintBottom_toTopOf="@+id/orderNumBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="47dp"
         android:text="Order Number"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="74dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintEnd_toStartOf="@+id/orderNumBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <Spinner
         android:id="@+id/orderNumBox"
         android:layout_width="234dp"
         android:layout_height="48dp"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="118dp"
-        tools:layout_editor_absoluteY="74dp" />
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintBottom_toTopOf="@+id/orderTotalTextBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="2dp"
         android:text="Order Total (includes tax) $:"
-        tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="143dp"
+        app:layout_constraintBottom_toTopOf="@+id/storeOrderListView"
+        app:layout_constraintEnd_toStartOf="@+id/orderTotalTextBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderNumBox"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
     <ListView
         android:id="@+id/storeOrderListView"
         android:layout_width="362dp"
         android:layout_height="387dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="172dp" />
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/cancelOrderButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderTotalTextBox"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/cancelOrderButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="109dp"
         android:text="Cancel Order"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="574dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/exportStoreOrdersButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/storeOrderListView"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/exportStoreOrdersButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="109dp"
         android:text="Export Store Orders"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="179dp"
-        tools:layout_editor_absoluteY="574dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cancelOrderButton"
+        app:layout_constraintTop_toBottomOf="@+id/storeOrderListView"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/orderTotalTextBox"
         android:layout_width="114dp"
         android:layout_height="48dp"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="204dp"
-        tools:layout_editor_absoluteY="130dp" />
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintBottom_toTopOf="@+id/storeOrderListView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/orderNumBox"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

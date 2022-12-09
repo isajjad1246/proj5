@@ -1,5 +1,7 @@
 package com.example.proj5;
-
+/**
+ * @author Reiya Dave, Ifrah Sajjad
+ * */
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -11,6 +13,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/***
+ * class method for current order activity file
+ *
+ */
 public class CurrentOrderActivity extends AppCompatActivity {
 
     private ChicagoStyleActivity chicagoStyleController;
@@ -64,6 +70,10 @@ public class CurrentOrderActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * on create method to initialize activity file
+     * @param savedInstanceState
+     * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

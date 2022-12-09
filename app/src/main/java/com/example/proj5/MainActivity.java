@@ -1,5 +1,7 @@
 package com.example.proj5;
-
+/**
+ * @author Reiya Dave, Ifrah Sajjad
+ * */
 import android.content.Intent;
 import android.media.audiofx.DynamicsProcessing;
 import android.os.Bundle;
@@ -23,6 +25,9 @@ import android.widget.Button;
 
 import java.io.IOException;
 
+/**
+ * class method for main activity
+ * */
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
@@ -241,6 +246,9 @@ public class MainActivity extends AppCompatActivity {
         order.add(pizza);
     }
 
+    /**
+     * on create method for main activity file
+     * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -300,6 +308,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * method to show options for on create
+     * @param menu
+     * */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -307,6 +319,10 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * method for options to select
+     * @param item
+     * */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -322,6 +338,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * method for navigation
+     * */
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);

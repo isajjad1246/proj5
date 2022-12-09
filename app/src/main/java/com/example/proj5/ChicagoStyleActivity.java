@@ -1,5 +1,7 @@
 package com.example.proj5;
-
+/**
+ * @author Reiya Dave, Ifrah Sajjad
+ * */
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,13 +23,16 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+/**
+ * class method for chicago style ativity file
+ * */
 public class ChicagoStyleActivity extends AppCompatActivity implements
         AdapterView.OnItemSelectedListener{
     CurrentOrderActivity currentOrderController;
 
     private ListView availableToppings;
     private ListView displayToppings;
-    ArrayAdapter<String> tempTopping;
+    //ArrayAdapter<String> tempTopping;
 
     PizzaFactory pf = new ChicagoPizza();
     Pizza deluxe = pf.createDeluxe();
@@ -40,7 +45,7 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
     String large = String.valueOf(Size.LARGE);
 
 
-    String flavorChoices[] = new String[]{String.valueOf(byo), String.valueOf(deluxe), String.valueOf(meatzza), String.valueOf(bbq)};
+    String flavorChoices[] = new String[]{"Build Your Own", "Deluxe", "Meatzza", "BBQ Chicken"};
     String size[] = new String[]{small, medium, large};
     private ImageView image;
 
@@ -245,20 +250,20 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
         for (int i = 0; i < deluxe.getToppings().size(); i++){
             temp.add(deluxe.getToppings().get(i).toString());
         }
-        tempTopping = new ArrayAdapter<String>(this, R.layout.activity_new_york_style, R.id.displayToppings, temp);
-        displayToppings.setAdapter(tempTopping);
+        /*ArrayAdapter<String> tempTopping = new ArrayAdapter<String>(this, R.layout.activity_new_york_style, R.id.displayToppings, temp);
+        displayToppings.setAdapter(tempTopping);*/
         //displayToppings.setItems(temp);
-        if(flavor.getSelectedItem().toString() == "Deluxe"){
+        if(flavor.getSelectedItem() == "Deluxe"){
             deluxe.setCrust(Crust.DEEP_DISH);
             //imageView2.setImage(deluxeImage);
         }
-        if(sizeSpin.getSelectedItem().toString() == "small"){
+        if(sizeSpin.getSelectedItem() == "small"){
             deluxe.setSize(Size.SMALL);
             priceBox2.setText(String.valueOf(deluxe.price()));
-        }else if(sizeSpin.getSelectedItem().toString() == "medium"){
+        }else if(sizeSpin.getSelectedItem() == "medium"){
             deluxe.setSize(Size.MEDIUM);
             priceBox2.setText(String.valueOf(deluxe.price()));
-        }else if(sizeSpin.getSelectedItem().toString() == "large"){
+        }else if(sizeSpin.getSelectedItem() == "large"){
             deluxe.setSize(Size.LARGE);
             priceBox2.setText(String.valueOf(deluxe.price()));
         }
@@ -282,20 +287,20 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
         for (int i = 0; i < bbq.getToppings().size(); i++){
             temp.add(bbq.getToppings().get(i).toString());
         }
-        tempTopping = new ArrayAdapter<String>(this, R.layout.activity_new_york_style, R.id.displayToppings, temp);
-        displayToppings.setAdapter(tempTopping);
+        /*ArrayAdapter<String> tempTopping = new ArrayAdapter<String>(this, R.layout.activity_new_york_style, R.id.displayToppings, temp);
+        displayToppings.setAdapter(tempTopping);*/
         //displayToppings.setItems(temp);
-        if(flavor.getSelectedItem().toString() == "BBQ"){
+        if(flavor.getSelectedItem() == "BBQ"){
             bbq.setCrust(Crust.PAN);
             //imageView2.setImage(bbqImage);
         }
-        if(sizeSpin.getSelectedItem().toString() == "small"){
+        if(sizeSpin.getSelectedItem() == "small"){
             bbq.setSize(Size.SMALL);
             priceBox2.setText(String.valueOf(bbq.price()));
-        }else if(sizeSpin.getSelectedItem().toString() == "medium"){
+        }else if(sizeSpin.getSelectedItem() == "medium"){
             bbq.setSize(Size.MEDIUM);
             priceBox2.setText(String.valueOf(bbq.price()));
-        }else if(sizeSpin.getSelectedItem().toString() == "large"){
+        }else if(sizeSpin.getSelectedItem() == "large"){
             bbq.setSize(Size.LARGE);
             priceBox2.setText(String.valueOf(bbq.price()));
         }
@@ -318,19 +323,19 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
             temp.add(meatzza.getToppings().get(i).toString());
         }
         //displayToppings.setItems(temp);
-        tempTopping = new ArrayAdapter<String>(this, R.layout.activity_new_york_style, R.id.displayToppings, temp);
-        displayToppings.setAdapter(tempTopping);
-        if(flavor.getSelectedItem().toString() == "Meatzza"){
+        /*ArrayAdapter<String> tempTopping = new ArrayAdapter<String>(this, R.layout.activity_new_york_style, R.id.displayToppings, temp);
+        displayToppings.setAdapter(tempTopping);*/
+        if(flavor.getSelectedItem() == "Meatzza"){
             meatzza.setCrust(Crust.STUFFED);
             //imageView2.setImage(meatzzaImage);
         }
-        if(sizeSpin.getSelectedItem().toString() == "small"){
+        if(sizeSpin.getSelectedItem() == "small"){
             meatzza.setSize(Size.SMALL);
             priceBox2.setText(String.valueOf(meatzza.price()));
-        }else if(sizeSpin.getSelectedItem().toString() == "medium"){
+        }else if(sizeSpin.getSelectedItem() == "medium"){
             meatzza.setSize(Size.MEDIUM);
             priceBox2.setText(String.valueOf(meatzza.price()));
-        }else if(sizeSpin.getSelectedItem().toString() == "large"){
+        }else if(sizeSpin.getSelectedItem() == "large"){
             meatzza.setSize(Size.LARGE);
             priceBox2.setText(String.valueOf(meatzza.price()));
         }
@@ -347,17 +352,17 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
         //set 2nd list view empty but changes on button click
         //when add pizza is clicked, create pizza.buildyourown() type
         //display price-increase every time topping is added
-        if(flavor.getSelectedItem().toString() == "Build Your Own"){
+        if(flavor.getSelectedItem() == "Build Your Own"){
             byo.setCrust(Crust.PAN);
             //imageView2.setImage(byoImage);
         }
-        if(sizeSpin.getSelectedItem().toString() == "small"){
+        if(sizeSpin.getSelectedItem() == "small"){
             byo.setSize(Size.SMALL);
             priceBox2.setText(String.valueOf(byo.price()));
-        }else if(sizeSpin.getSelectedItem().toString() == "medium"){
+        }else if(sizeSpin.getSelectedItem() == "medium"){
             byo.setSize(Size.MEDIUM);
             priceBox2.setText(String.valueOf(byo.price()));
-        }else if(sizeSpin.getSelectedItem().toString() == "large"){
+        }else if(sizeSpin.getSelectedItem() == "large"){
             byo.setSize(Size.LARGE);
             priceBox2.setText(String.valueOf(byo.price()));
         }
@@ -430,7 +435,10 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
 //
 //    }
 
-
+    /**
+     * on create method for activity android file
+     * @param savedInstanceState
+     * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -458,6 +466,13 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
 
     }
 
+    /**
+     * method for action when item is selected
+     * @param adapterView
+     * @param view
+     * @param i
+     * @param l
+     * */
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         int position = flavor.getSelectedItemPosition();
@@ -466,26 +481,26 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
         switch (position) {
             case 0:
                 image.setImageResource(R.drawable.byo_chicago);
-                addButton.setEnabled(true);
-                removeButton.setEnabled(true);
+                //addButton.setEnabled(true);
+                //removeButton.setEnabled(true);
                 byoFlavor();
                 break;
             case 1:
                 image.setImageResource(R.drawable.deluxe_chicago);
-                addButton.setEnabled(false);
-                removeButton.setEnabled(false);
+                //addButton.setEnabled(false);
+                //removeButton.setEnabled(false);
                 deluxeFlavor();
                 break;
             case 2:
                 image.setImageResource(R.drawable.meatzza_chicago);
-                addButton.setEnabled(false);
-                removeButton.setEnabled(false);
+                //addButton.setEnabled(false);
+                //removeButton.setEnabled(false);
                 meatzzaFlavor();
                 break;
             case 3:
                 image.setImageResource(R.drawable.bbq_chicago);
-                addButton.setEnabled(false);
-                removeButton.setEnabled(false);
+                //addButton.setEnabled(false);
+                //removeButton.setEnabled(false);
                 BBQChickenFlavor();
                 break;
         }
@@ -499,6 +514,10 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
 
     }
 
+    /**
+     * action for when nothing is selected
+     * @param adapterView
+     * */
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
