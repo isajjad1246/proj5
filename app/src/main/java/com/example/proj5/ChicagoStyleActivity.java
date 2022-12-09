@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ChicagoStyleActivity extends AppCompatActivity implements
@@ -26,6 +27,7 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
 
     private ListView availableToppings;
     private ListView displayToppings;
+    ArrayAdapter<String> tempTopping;
 
     PizzaFactory pf = new ChicagoPizza();
     Pizza deluxe = pf.createDeluxe();
@@ -63,7 +65,7 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
      * Method for flavor box
      * @param view
      * **/
-    void selectFlavor(View view) {
+    /*void selectFlavor(View view) {
         String flavorString = flavor.getSelectedItem().toString();
         if(flavorString.equalsIgnoreCase("Deluxe")){
             image.setImage(deluxeImage);
@@ -90,11 +92,11 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
             byoFlavor();
         }
 
-    }
+    }*/
 
     /**
      * Method for size box
-     * @param event
+     * @param view
      * */
     void selectSize(View view){
         String flavorString = flavor.getSelectedItem().toString();
@@ -160,7 +162,7 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
 
     /**
      * Method for add button
-     * @param event
+     * @param view
      * */
     void addButton(View view){ //Toast/AlertDialog
         if(displayToppings.getAdapter().getCount() >= 7){
@@ -185,7 +187,7 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
 
     /**
      * Method for remove button
-     * @param event
+     * @param view
      * */
     void removeButton(View view){
         String availableItem = displayToppings.getSelectedItem().toString();
@@ -239,10 +241,13 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
         //display price
 
         //ObservableList<String> temp = FXCollections.observableArrayList();
+        ArrayList<String> temp = new ArrayList<>();
         for (int i = 0; i < deluxe.getToppings().size(); i++){
             temp.add(deluxe.getToppings().get(i).toString());
         }
-        displayToppings.setItems(temp);
+        tempTopping = new ArrayAdapter<String>(this, R.layout.activity_new_york_style, R.id.displayToppings, temp);
+        displayToppings.setAdapter(tempTopping);
+        //displayToppings.setItems(temp);
         if(flavor.getSelectedItem().toString() == "Deluxe"){
             deluxe.setCrust(Crust.DEEP_DISH);
             //imageView2.setImage(deluxeImage);
@@ -272,11 +277,14 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
         //set 2nd list view to chicago bbqchicken toppings
         //when add pizza is clicked, create pizza.bbqchicken() type
         //display price
-        ObservableList<String> temp = FXCollections.observableArrayList();
+        //ObservableList<String> temp = FXCollections.observableArrayList();
+        ArrayList temp = new ArrayList();
         for (int i = 0; i < bbq.getToppings().size(); i++){
             temp.add(bbq.getToppings().get(i).toString());
         }
-        displayToppings.setItems(temp);
+        tempTopping = new ArrayAdapter<String>(this, R.layout.activity_new_york_style, R.id.displayToppings, temp);
+        displayToppings.setAdapter(tempTopping);
+        //displayToppings.setItems(temp);
         if(flavor.getSelectedItem().toString() == "BBQ"){
             bbq.setCrust(Crust.PAN);
             //imageView2.setImage(bbqImage);
@@ -304,11 +312,14 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
         //set 2nd list view to chicago deluxe toppings
         //when add pizza is clicked, create pizza.deluxe() type
         //display price
-        ObservableList<String> temp = FXCollections.observableArrayList();
+        //ObservableList<String> temp = FXCollections.observableArrayList();
+        ArrayList temp = new ArrayList();
         for (int i = 0; i < meatzza.getToppings().size(); i++){
             temp.add(meatzza.getToppings().get(i).toString());
         }
-        displayToppings.setItems(temp);
+        //displayToppings.setItems(temp);
+        tempTopping = new ArrayAdapter<String>(this, R.layout.activity_new_york_style, R.id.displayToppings, temp);
+        displayToppings.setAdapter(tempTopping);
         if(flavor.getSelectedItem().toString() == "Meatzza"){
             meatzza.setCrust(Crust.STUFFED);
             //imageView2.setImage(meatzzaImage);
@@ -365,7 +376,7 @@ public class ChicagoStyleActivity extends AppCompatActivity implements
 
     /**
      * Method for handling adding to order button
-     * @param event
+     * @param view
      *
      * */
     public void addPizzaToOrder(View view){

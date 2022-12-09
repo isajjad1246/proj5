@@ -1,5 +1,6 @@
 package com.example.proj5;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -74,7 +75,7 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
      *
      * @param view
      */
-    void selectFlavor(View view) {
+    /*void selectFlavor(View view) {
         String flavorString = flavor.getSelectedItem().toString();
         if (flavorString.equalsIgnoreCase("Deluxe")) {
             //imageView2.setImage(deluxeImage);
@@ -102,7 +103,7 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
             byoFlavor();
         }
 
-    }
+    }*/
 
     /**
      * Method for size box
@@ -172,10 +173,15 @@ public class NewYorkStyleActivity extends AppCompatActivity implements
      */
     void addButton(View view) {
         if (displayToppings.getAdapter().getCount() >= 7) {
-            ButtonType ButtonType = null;
+            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            alert.setTitle("Maximum number of toppings");
+            alert.setMessage("At most 7 toppings!");
+            alert.setPositiveButton("Ok", null);
+            alert.show();
+            /*ButtonType ButtonType = null;
             Alert alarm = new Alert(Alert.AlertType.ERROR, "cannot exceed 7 toppings!", ButtonType);
             alarm.setHeaderText("This is the maximum number of toppings");
-            alarm.show();
+            alarm.show();*/
         } else {
             String availableItem = availableToppings.getSelectedItem().toString();
             //String availableItem = availableToppings.getItemAtPosition();
